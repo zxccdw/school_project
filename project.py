@@ -12,12 +12,12 @@ class Theory(QMainWindow):
         self.initUI()
 
     def initUI(self):
-        uic.loadUi('ui/lessons.ui', self)
+        uic.loadUi('lessons.ui', self)
         self.menu.clicked.connect(self.to_menu)
         self.next.clicked.connect(self.nxt)
         self.pred.clicked.connect(self.prd)
         self.tasks.clicked.connect(self.to_content)
-        f = open('theory/lesson_{}.txt'.format(self.page), 'r', encoding="UTf8")
+        f = open('lesson_{}.txt'.format(self.page), 'r', encoding="UTf8")
         self.label.setText(f.readline().strip())
         k = f.read()
         self.textBrowser.setText(k)
@@ -55,7 +55,7 @@ class MainWindow(QMainWindow):
         self.practic.clicked.connect(self.to_pract)
 
     def initUI(self):
-        uic.loadUi('ui/main_window.ui', self)
+        uic.loadUi('main_window.ui', self)
 
     def off(self): # Выход из программы
         sys.exit()
@@ -96,7 +96,7 @@ class Practic(QMainWindow):
         self.close()
 
     def read_f(self): # Считывание заданий из файла
-        f = open("practick/pract_{}.txt".format(self.test), 'r', encoding="UTF8")
+        f = open("pract_{}.txt".format(self.test), 'r', encoding="UTF8")
         self.mx = int(f.readline().strip())
         for i in range(self.mx):
             tsk = f.readline().strip()
@@ -142,7 +142,7 @@ class Content(QMainWindow):
         self.initUI()
 
     def initUI(self):
-        uic.loadUi('ui/content.ui', self)
+        uic.loadUi('content.ui', self)
         self.pushButton.clicked.connect(self.to_menu)
         self.add_contents()
         self.listWidget.currentRowChanged.connect(self.to_theme)
