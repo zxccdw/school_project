@@ -82,7 +82,7 @@ class Practic(QMainWindow):
         self.flag = 0
 
     def initUI(self):
-        uic.loadUi('ui/testing.ui', self)
+        uic.loadUi('testing.ui', self)
         self.menu.clicked.connect(self.to_menu) # Подключение кнопок
         self.pushButton_0.clicked.connect(self.check)
         self.pushButton_1.clicked.connect(self.check)
